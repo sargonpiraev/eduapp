@@ -1,7 +1,8 @@
 var sequelize = require('sequelize');
 
 var postgresql = new sequelize('postgres://postgres@localhost:5432/postgres', {
-	dialect: 'postgres'
+	dialect: 'postgres',
+	logging: false
 });
 
 postgresql.import('./model/user');

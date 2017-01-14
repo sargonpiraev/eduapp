@@ -9,4 +9,5 @@
 	<include file='0.0.2-create-table-user.xml' relativeToChangelogFile='true' />
 	<include file='0.0.3-table-user-create-column-token.xml' relativeToChangelogFile='true' />
 	<include file='0.0.4-table-user-create-column-created-at-updated-at-deleted-at.xml' relativeToChangelogFile='true' />
+	<include file='0.0.5-table-user-create-column-email-confirm-token.xml' relativeToChangelogFile='true' />
 </databaseChangeLog>
