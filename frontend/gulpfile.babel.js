@@ -44,7 +44,7 @@ gulp.task('css', [ 'css:vendor', 'css:custom' ]);
 gulp.task('js', (callback) => {
 	webpack(webpackConfig, (err, stats) => {
 		if (err) throw new gulpUtil.PluginError("webpack", err);
-		// gulpUtil.log("[webpack]", stats.toString({}));
+		gulpUtil.log("[webpack]", stats.toString({}));
 		callback();
 	});
 });

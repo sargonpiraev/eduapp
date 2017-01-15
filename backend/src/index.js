@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 // import passport from 'passport';
 // import passportHttpBearer from 'passport-http-bearer';
 
@@ -9,7 +10,7 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(cors());
 // passport.use(
 // 	new passportHttpBearer.Strategy((token, done) => {
 // 		db.models.User.findOne({
