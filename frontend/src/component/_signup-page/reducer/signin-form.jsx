@@ -16,6 +16,12 @@ const initialState = {
 	// touched: []
 };
 
+return [
+	...state,
+	{}
+];
+
+
 export default (state = initialState, action) => {
 	switch (action.type) {
 		case SIGNUP_PAGE_SIGNIN_FORM_FIELD_CHANGE:

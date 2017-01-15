@@ -60,7 +60,7 @@ gulp.task('dest', [ 'html', 'css', 'js', 'copy' ]);
 gulp.task('watch', () => {
 	gulp.watch('src/**/*.pug', [ 'html' ]);
 	gulp.watch('src/**/*.styl', [ 'css' ]);
-	gulp.watch('src/**/*.jsx', [ 'js' ]);
+	gulp.watch('src/**/*.js', [ 'js' ]);
 });
 
 gulp.task('dev', [ 'dest', 'watch' ]);

@@ -2,7 +2,7 @@ import webpack from 'webpack';
 
 export default {
 	entry: {
-		'dest/vendor': [ 'react', 'react-dom' ],
+		'dest/vendor': [ 'react', 'react-dom', 'redux-thunk' ],
 		'dest/custom': './src'
 	},
 	output: {
