@@ -5,8 +5,8 @@ import UserService from './../service/user';
 
 let persisted = UserService.getPersisted();
 
-const authState = persisted ? presisted.id : null;
-export const auth = (state = authState, action) => {
+const authInitialState = persisted ? persisted.id : null;
+export const auth = (state = authInitialState, action) => {
 	switch (action.type) {
 		case SIGNIN_SUCCESS:
 			return action.response.id;
@@ -42,7 +42,10 @@ const itemState = persisted ? { [ persisted.id ]: persisted } : {};
 export const item = (state = itemState, action) => {
 	switch (action.type) {
 		case SIGNIN_SUCCESS:
-			return [ ...state, action.response.id ];
+			return {
+				...state,
+				[ action.response.id ]: action.response
+			};
 			break;
 		// case SIGNOUT_REQUEST:
 		// 	return state.filter((id) => { return id !== action.id });

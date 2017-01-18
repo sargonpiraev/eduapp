@@ -1,7 +1,7 @@
 var supertest = require('supertest');
 
-var ERROR_CODE = require('./../constant/error-code');
-var postgresql = require('./../postgresql');
+var ERROR_CODE = require('./../../constant/error-code');
+var postgresql = require('./../../postgresql');
 
 var USER = { fullName: 'John Doe', email: 'sargonpiraev@gmail.com', password: '123123' };
 

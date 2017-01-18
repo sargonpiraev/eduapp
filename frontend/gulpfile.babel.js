@@ -49,11 +49,19 @@ gulp.task('js', (callback) => {
 	});
 });
 
-gulp.task('copy', () => {
+gulp.task('copy:img', () => {
 	return gulp
 		.src([ 'src/**/*.jpg', 'src/**/*.png' ])
 		.pipe(gulp.dest(DEST));
 });
+
+gulp.task('copy:font', () => {
+	return gulp
+		.src([ 'node_modules/bootstrap/fonts/**' ])
+		.pipe(gulp.dest(DEST + '/fonts'));
+});
+
+gulp.task('copy', [ 'copy:font', 'copy:img' ]);
 
 gulp.task('dest', [ 'html', 'css', 'js', 'copy' ]);
 

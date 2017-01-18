@@ -20,8 +20,7 @@ export default {
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'dest/vendor',
-			chunks: [ 'dest/custom' ],
-			// filename: '[name].js'
+			chunks: [ 'dest/custom' ]
 		})
 	]
 }

@@ -1,9 +1,9 @@
 var tv4 = require('tv4');
 
-var postgresql = require('./../postgresql');
-var schema = require('./signup.schema.json');
-var ERROR_CODE = require('./../constant/error-code');
-var emailSender = require('./../email-sender');
+var postgresql = require('./../../postgresql');
+var schema = require('./index.json');
+var ERROR_CODE = require('./../../constant/error-code');
+var emailSender = require('./../../email-sender');
 
 module.exports.default = (req, res, next) => {
 	let { email, password, fullName } = req.body;

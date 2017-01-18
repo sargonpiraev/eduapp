@@ -11,11 +11,11 @@ export const signupSuccess = (response) => {
 export const signupFailure = (response) => {
 	return { type: SIGNUP_FAILURE, response };
 };
-export default (user) => {
-	let { fullName, email, password } = user;
-	return (dispatch) => {
+export default () => {
+	return (dispatch, getState) => {
 		dispatch(signupRequest());
-		UserService.signup({ fullName, email, password }).then((response) => {
+		let { fullName, email, password, screenName } = getState().form.signup;
+		UserService.signup({ fullName, email, password, screenName }).then((response) => {
 			dispatch(signupSuccess(response));
 			dispatch(push('/'));
 		}).catch(() => {

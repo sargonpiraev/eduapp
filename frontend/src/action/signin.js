@@ -1,5 +1,6 @@
 import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE } from './../constant';
 import UserService from './../service/user';
+import { push, replace } from 'react-router-redux';
 
 export const signinRequest = () => {
 	return { type: SIGNIN_REQUEST };
@@ -10,12 +11,14 @@ export const signinSuccess = (response) => {
 export const signinFailure = (response) => {
 	return { type: SIGNIN_FAILURE, response };
 };
-export default (email ,password) => {
-	return (dispatch) => {
+export default () => {
+	return (dispatch, getState) => {
 		dispatch(signinRequest());
+		let { email, password } = getState().form.signin;
 		UserService.signin({ email, password }).then((response) => {
 			dispatch(signinSuccess(response));
-		}).catch(() => {
+			dispatch(replace('/'))
+		}).catch((response) => {
 			dispatch(signinFailure(response));
 		});
 	};

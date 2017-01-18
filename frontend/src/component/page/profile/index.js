@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-class HomePage extends React.Component {
+export default class extends React.Component {
 
 	render () {
 		return (
-			<div className="home-page">
+			<div className="profile-page">
 				<nav className="navbar navbar-default">
 					<div className="container">
 						<ul className="nav navbar-nav">
@@ -13,8 +12,7 @@ class HomePage extends React.Component {
 							<li><a href="#">Notifications</a></li>
 							<li><a className="messages" href="#">Messages</a></li>
 						</ul>
-						<button className="btn btn-default navbar-btn pull-right signout">Sign out</button>
-						<ul className="nav navbar-nav pull-right">
+						<ul className="nav navbar-nav navbar-right">
 							<li>
 								<form className="navbar-form navbar-right" role="search">
 									<div className="input-group">
@@ -42,65 +40,54 @@ class HomePage extends React.Component {
 								</ul>
 							</li>
 							<li>
-								<button className="btn btn-primary navbar-btn create-tweet">Tweet</button>
+								<button className="btn btn-primary navbar-btn navbar-right create-tweet">Tweet</button>
 							</li>
 						</ul>
 					</div>
 				</nav>
-				<main className="container">
-					<div className="row">
-						<div className="col-md-3">
-							<div className="profile">
-								<div className="panel panel-default"><img src="https://pbs.twimg.com/profile_banners/2868041297/1415534069/600x200" width="100%"/>
-									<div className="panel-body">
-										<div className="row">
-											<div className="col-md-4">
-												<a className="thumbnail" href="#profile">
-													<img src="https://pbs.twimg.com/profile_images/531414442739646464/Hc6G_ekH_bigger.jpeg" width="100%"/>
-												</a>
-											</div>
-											<div className="col-md-8">
-												<h4>{ this.props.user.fullName }</h4><small>{ this.props.user.screenName }</small>
-											</div>
-										</div>
-										<div className="row">
-											<div className="col-md-4"><span>Tweets</span><br/><b>tweetTotal</b></div>
-											<div className="col-md-4"><span>Following</span><br/><b>followingTotal</b></div>
-											<div className="col-md-4"><span>Followers</span><br/><b>followerTotal</b></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="trends">
-								<div className="panel panel-default">
-									<div className="panel-body">
-										<h4>Trends</h4>
-										<div id="trends-list">
-											<div>	trend</div>
-										</div>
-									</div>
+				<div className="main-region"><div>
+					<header className="canopy">
+						<div className="container">
+							<div className="row">
+								<div className="col-md-2">
+									<div className="thumbnail"><img src="https://pbs.twimg.com/profile_images/531414442739646464/Hc6G_ekH_400x400.jpeg" /></div>
 								</div>
 							</div>
 						</div>
-					<div className="col-md-6">
-						<div className="panel panel-info">
-							<div className="panel-heading">
-								<div className="input-group">
-									<span className="input-group-addon" id="id-param">
-										<img height="20" src="https://pbs.twimg.com/profile_images/531414442739646464/Hc6G_ekH_normal.jpeg"/>
-									</span>
-									<input className="form-control"/>
-									<div className="input-group-btn">
-										<button className="btn btn-primary">Add photos</button>
-									</div>
+					</header>
+					<nav className="navbar navbar-default">
+						<div className="container">
+							<div className="row">
+								<div className="col-md-9 col-md-offset-3">
+									<ul className="nav navbar-nav">
+										<li className="active"><a href="#">Tweets</a></li>
+										<li><a href="#">Following</a></li>
+										<li><a href="#">Followers</a></li>
+									</ul>
+									<button className="btn btn-default navbar-btn pull-right">Edit profile</button>
 								</div>
 							</div>
-							<ul className="list-group">
-								<li className="list-group-item">View 23 new Tweets</li>
-							</ul>
-							<div className="panel-body tweets">
-								<div>
-									<div className="media">
+						</div>
+					</nav>
+					<main className="container">
+						<div className="row">
+							<div className="col-md-3">
+								<h3>Sargon Piraev<br /><small>@sargonpiraev</small></h3>
+							</div>
+							<div className="col-md-6">
+								<div className="panel panel-info">
+									<div className="panel-heading">
+										<div className="input-group"><span className="input-group-addon"><img height="20" src="https://pbs.twimg.com/profile_images/531414442739646464/Hc6G_ekH_normal.jpeg" /></span>
+											<input className="form-control"/>
+												<div className="input-group-btn">
+													<button className="btn btn-primary">Add photos</button>
+												</div>
+										</div>
+									</div>
+									<ul className="list-group">
+										<li className="list-group-item">View 23 new Tweets</li>
+									</ul>
+									<div className="panel-body tweets"><div><div className="media">
 										<div className="media-left">
 											<a href="#">
 												<img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/531414442739646464/Hc6G_ekH_400x400.jpeg" />
@@ -108,8 +95,7 @@ class HomePage extends React.Component {
 										</div>
 										<div className="media-body">
 											<h4 className="media-heading">Sargon Piraev</h4>
-											<p>123</p>
-											<img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%" />
+											<p>123</p><img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%"/>
 											<div className="row">
 												<div className="col-md-2">
 													<button className="btn btn-link"><span className="glyphicon glyphicon-share-alt"></span></button>
@@ -130,8 +116,7 @@ class HomePage extends React.Component {
 												</div>
 											</div>
 										</div>
-									</div>
-									<div className="media">
+									</div><div className="media">
 										<div className="media-left">
 											<a href="#">
 												<img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" />
@@ -140,7 +125,7 @@ class HomePage extends React.Component {
 										<div className="media-body">
 											<h4 className="media-heading">Lilly Key</h4>
 											<p>Here the text 4 goes</p>
-											<img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%" />
+											<img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%"/>
 											<div className="row">
 												<div className="col-md-2">
 													<button className="btn btn-link"><span className="glyphicon glyphicon-share-alt"></span></button>
@@ -161,17 +146,11 @@ class HomePage extends React.Component {
 												</div>
 											</div>
 										</div>
-									</div>
-									<div className="media">
-										<div className="media-left">
-											<a href="#">
-												<img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" />
-											</a>
-										</div>
+									</div><div className="media">
+										<div className="media-left"><a href="#"><img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" /></a></div>
 										<div className="media-body">
 											<h4 className="media-heading">Clue Bill</h4>
-											<p>The text 3 of the news 1 goes</p>
-											<img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%" />
+											<p>The text 3 of the news 1 goes</p><img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%"/>
 											<div className="row">
 												<div className="col-md-2">
 													<button className="btn btn-link"><span className="glyphicon glyphicon-share-alt"></span></button>
@@ -192,17 +171,11 @@ class HomePage extends React.Component {
 												</div>
 											</div>
 										</div>
-									</div>
-									<div className="media">
-										<div className="media-left">
-											<a href="#">
-												<img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" />
-											</a>
-										</div>
+									</div><div className="media">
+										<div className="media-left"><a href="#"><img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" /></a></div>
 										<div className="media-body">
 											<h4 className="media-heading">Marry Key</h4>
-											<p>Here the text 2 goes</p>
-											<img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%" />
+											<p>Here the text 2 goes</p><img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%"/>
 											<div className="row">
 												<div className="col-md-2">
 													<button className="btn btn-link"><span className="glyphicon glyphicon-share-alt"></span></button>
@@ -223,17 +196,11 @@ class HomePage extends React.Component {
 												</div>
 											</div>
 										</div>
-									</div>
-									<div className="media">
-										<div className="media-left">
-											<a href="#">
-												<img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" />
-											</a>
-										</div>
+									</div><div className="media">
+										<div className="media-left"><a href="#"><img width="73px" className="media-object" src="https://pbs.twimg.com/profile_images/643463843541155841/pmMygGUP_bigger.jpg" /></a></div>
 										<div className="media-body">
 											<h4 className="media-heading">Jack Bill</h4>
-											<p>Here the text of the news 1 goes</p>
-											<img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%" />
+											<p>Here the text of the news 1 goes</p><img src="https://pbs.twimg.com/media/B75xFR9IAAMr9eH.jpg" width="100%"/>
 											<div className="row">
 												<div className="col-md-2">
 													<button className="btn btn-link"><span className="glyphicon glyphicon-share-alt"></span></button>
@@ -254,74 +221,66 @@ class HomePage extends React.Component {
 												</div>
 											</div>
 										</div>
+									</div></div></div>
+								</div>
+							</div>
+							<div className="col-md-3">
+								<div className="who-to-follow"><div>
+									<div className="who-to-follow panel panel-info">
+										<div className="panel-body">
+											<h4>Близкие по духу</h4>
+											<div className="medias"><div className="media">
+												<div className="media-left"><a href="#"><img src="https://pbs.twimg.com/profile_images/523746093440331776/NWeBm6se_normal.png" className="media-object"/></a></div>
+												<div className="media-body">
+													<h5 className="media-heading">hello</h5>
+													<button className="btn btn-default btn-sm"><span aria-hidden="true" className="glyphicon glyphicon-user"></span>Читать</button>
+												</div>
+											</div><div className="media">
+												<div className="media-left"><a href="#"><img src="https://pbs.twimg.com/profile_images/523746093440331776/NWeBm6se_normal.png" className="media-object"/></a></div>
+												<div className="media-body">
+													<h5 className="media-heading">world</h5>
+													<button className="btn btn-default btn-sm"><span aria-hidden="true" className="glyphicon glyphicon-user"></span>Читать</button>
+												</div>
+											</div></div>
+										</div>
+									</div>
+								</div></div>
+								<div className="trends"><ul className="list-unstyled">
+									<div className="panel panel-default">
+										<div className="panel-body">
+											<h4>Trends</h4>
+											<div id="trends-list"><li>#Marr</li><li>#GratefulYammouni</li><li>Jean de Villiers</li><li>#НасосБезСмс</li><li>Cereal Cafe</li><li>Sanusi</li><li>#танцынатнт</li><li>Frank Tyson</li><li>Ron Dennis</li><li>#ThankYouALDUBNation</li></div>
+										</div>
+									</div>
+								</ul></div>
+								<div className="stuff panel panel-info">
+									<div className="panel-body">
+										<ul>
+											<li className="Footer-item Footer-copyright copyright">© 2015 Twitter</li>
+											<li className="Footer-item"><a href="/about" className="Footer-link">О нас</a></li>
+											<li className="Footer-item"><a href="//support.twitter.com" className="Footer-link">Помощь</a></li>
+											<li className="Footer-item"><a href="/tos" className="Footer-link">Условия</a></li>
+											<li className="Footer-item"><a href="/privacy" className="Footer-link">Конфиденциальность</a></li>
+											<li className="Footer-item"><a href="//support.twitter.com/articles/20170514" className="Footer-link">Файлы cookie</a></li>
+											<li className="Footer-item"><a href="//support.twitter.com/articles/20170451" className="Footer-link">О рекламе</a></li>
+											<li className="Footer-item"><a href="//about.twitter.com/press/brand-assets" className="Footer-link">Бренд</a></li>
+											<li className="Footer-item"><a href="https://blog.twitter.com" className="Footer-link">Блог</a></li>
+											<li className="Footer-item"><a href="http://status.twitter.com" className="Footer-link">Состояние</a></li>
+											<li className="Footer-item"><a href="https://about.twitter.com/products" className="Footer-link">Приложения</a></li>
+											<li className="Footer-item"><a href="https://about.twitter.com/careers" className="Footer-link">Вакансии</a></li>
+											<li className="Footer-item"><a href="//ads.twitter.com/start?ref=gl-tw-tw-twitter-advertise" className="Footer-link">Реклама в Твиттере</a></li>
+											<li className="Footer-item"><a href="https://business.twitter.com" className="Footer-link">Компаниям</a></li>
+											<li className="Footer-item"><a href="//media.twitter.com" className="Footer-link">СМИ</a></li>
+											<li className="Footer-item"><a href="//dev.twitter.com" className="Footer-link">Разработчикам</a></li>
+										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className="col-md-3">
-						<div className="who-to-follow panel panel-info">
-							<div className="panel-body">
-								<h4>Близкие по духу</h4>
-								<div className="medias"><div className="media">
-									<div className="media-left">
-										<a href="#">
-											<img src="https://pbs.twimg.com/profile_images/523746093440331776/NWeBm6se_normal.png" className="media-object" />
-										</a>
-									</div>
-									<div className="media-body">
-										<h5 className="media-heading">hello</h5>
-										<button className="btn btn-default btn-sm"><span aria-hidden="true" className="glyphicon glyphicon-user"></span>Читать</button>
-									</div>
-								</div><div className="media">
-									<div className="media-left">
-										<a href="#">
-											<img src="https://pbs.twimg.com/profile_images/523746093440331776/NWeBm6se_normal.png" className="media-object" />
-										</a>
-									</div>
-									<div className="media-body">
-										<h5 className="media-heading">world</h5>
-										<button className="btn btn-default btn-sm"><span aria-hidden="true" className="glyphicon glyphicon-user"></span>Читать</button>
-									</div>
-								</div></div>
-							</div>
-						</div>
-						<div className="stuff panel panel-info">
-							<div className="panel-body">
-								<ul>
-									<li className="Footer-item Footer-copyright copyright">© 2015 Twitter</li>
-									<li className="Footer-item"><a className="Footer-link" href="/about">О нас</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//support.twitter.com">Помощь</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="/tos">Условия</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="/privacy">Конфиденциальность</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//support.twitter.com/articles/20170514">Файлы cookie</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//support.twitter.com/articles/20170451">О рекламе</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//about.twitter.com/press/brand-assets">Бренд</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="https://blog.twitter.com">Блог</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="http://status.twitter.com">Состояние</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="https://about.twitter.com/products">Приложения</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="https://about.twitter.com/careers">Вакансии</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//ads.twitter.com/start?ref=gl-tw-tw-twitter-advertise">Реклама в Твиттере</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="https://business.twitter.com">Компаниям</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//media.twitter.com">СМИ</a></li>
-									<li className="Footer-item"><a className="Footer-link" href="//dev.twitter.com">Разработчикам</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					</div>
-				</main>
+					</main>
+				</div></div>
 			</div>
 		);
 	}
 
 };
-
-const mapStateToProps = (state) => {
-	return {
-		user: state.user.item[state.user.auth]
-	};
-};
-export default connect(
-	mapStateToProps
-)(HomePage);
